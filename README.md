@@ -109,4 +109,19 @@ If the domain has not been found in the table, the server will respond an error 
 **Notes:**<br/>
 1. If the minisite/page parts are missing from the url, the server will redirect 301 the request to the default minisite/page uri.<br/><br/>
 2. Alonside dynamic code, the server also handles static files.<br/>For serving a static file, it expects a url like: http://mydomain.com/myfile.pdf<br/><br/>
-3. By default, the server will echo the string of *DYNHTTPSITES.htmlResponse* and will end the response.<br/>If from some reason you don't want the response to end (for example: websockets) then use:<br/>*DYNHTTPSITES.flgFinalize == 0;*
+3. By default, the server will echo the string of *DYNHTTPSITES.htmlResponse* and will end the response.<br/>If from some reason you don't want the response to end (for example: websockets) then use:<br/>*DYNHTTPSITES.flgFinalize == 0;*<br/><br/>
+**Variables:**<br/><br/>
+The server will hold the following variables on each request, you may use them:<br/>
+*DYNHTTPSITES.htmlResponse*<br/>
+*DYNHTTPSITES.binResponse*<br/>
+*DYNHTTPSITES.strReqProtocol*<br/>
+*DYNHTTPSITES.strReqDomain*<br/>
+*DYNHTTPSITES.iReqPort*<br/>
+*DYNHTTPSITES.strReqUri*<br/>
+*DYNHTTPSITES.strReqMinisiteUri*<br/>
+*DYNHTTPSITES.strReqPageUri*<br/>
+*DYNHTTPSITES.arrReqQueryString*<br/>
+*DYNHTTPSITES.arrReqPostData*<br/>
+*DYNHTTPSITES.arrReqPostFiles*<br/>
+*DYNHTTPSITES.arrReqCookies*<br/>
+*DYNHTTPSITES.strReqUserAgent*<br/>
