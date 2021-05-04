@@ -28,7 +28,7 @@ DYNCODE.strDynMode        = process.env['DYN_MODE']         || 'hello';
 DYNCODE.flgFinalize = 0;
 
 // === Connect to the DYNCODE database
-DYNCODE.dynMongoose.connect('mongodb://'+DYNCODE.strDynUser+':'+DYNCODE.strDynPasswd+'@mongo:27017/DBDYNCODE', {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true}, (err, db)=>{});
+DYNCODE.dynMongoose.connect('mongodb://'+DYNCODE.strDynUser+':'+DYNCODE.strDynPasswd+'@'+DYNCODE.strDynMognoServer+':27017/DBDYNCODE', {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true}, (err, db)=>{});
 DYNCODE.dynConn = DYNCODE.dynMongoose.connection;
 
 // === Connection error handling
