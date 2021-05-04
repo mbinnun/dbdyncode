@@ -197,19 +197,19 @@ If the domain has not been found in the table, the server will respond an error 
 
 **Variables:**<br/><br/>
 The server will hold the following variables on each request, you may use them:<br/><br/>
-*res.locals.DYNEXPRESSSITES..htmlResponse*<br/>
-*res.locals.DYNEXPRESSSITES..binResponse*<br/>
-*res.locals.DYNEXPRESSSITES..strReqProtocol*<br/>
-*res.locals.DYNEXPRESSSITES..strReqDomain*<br/>
-*res.locals.DYNEXPRESSSITES..iReqPort*<br/>
-*res.locals.DYNEXPRESSSITES..strReqUri*<br/>
-*res.locals.DYNEXPRESSSITES..strReqMinisiteUri*<br/>
-*res.locals.DYNEXPRESSSITES..strReqPageUri*<br/>
-*res.locals.DYNEXPRESSSITES..arrReqQueryString*<br/>
-*res.locals.DYNEXPRESSSITES..arrReqPostData*<br/>
-*res.locals.DYNEXPRESSSITES..arrReqPostFiles*<br/>
-*res.locals.DYNEXPRESSSITES..arrReqCookies*<br/>
-*res.locals.DYNEXPRESSSITES..strReqUserAgent*<br/>
+*res.locals.DYNEXPRESSSITES.htmlResponse*<br/>
+*res.locals.DYNEXPRESSSITES.binResponse*<br/>
+*res.locals.DYNEXPRESSSITES.strReqProtocol*<br/>
+*res.locals.DYNEXPRESSSITES.strReqDomain*<br/>
+*res.locals.DYNEXPRESSSITES.iReqPort*<br/>
+*res.locals.DYNEXPRESSSITES.strReqUri*<br/>
+*res.locals.DYNEXPRESSSITES.strReqMinisiteUri*<br/>
+*res.locals.DYNEXPRESSSITES.strReqPageUri*<br/>
+*res.locals.DYNEXPRESSSITES.arrReqQueryString*<br/>
+*res.locals.DYNEXPRESSSITES.arrReqPostData*<br/>
+*res.locals.DYNEXPRESSSITES.arrReqPostFiles*<br/>
+*res.locals.DYNEXPRESSSITES.arrReqCookies*<br/>
+*res.locals.DYNEXPRESSSITES.strReqUserAgent*<br/>
 <br/>
 
 ----
