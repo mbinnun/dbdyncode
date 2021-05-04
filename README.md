@@ -1,5 +1,5 @@
 # dbdyncode
-Run NodeJS code stored on database
+Run a NodeJS code, stored on a mongoDB database.
 
 ----
 **Installation**
