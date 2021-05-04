@@ -1,4 +1,4 @@
-# dbdyncode
+# DBDYNCODE
 Run a dynamic NodeJS code, stored on a mongoDB database.
 
 ----
