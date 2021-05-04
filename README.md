@@ -36,8 +36,8 @@ Use *export DYN_APPNAME=appname* to decide which code to fetch from the table.<b
 &nbsp;&nbsp;&nbsp;&nbsp;arrClasses [  <sub><-- Reusable codes ("classes")</sub><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtInsert<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtUpdate<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strName <-- "Class" name<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtCode <-- "Class" code to run<br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strName  <sub><-- "Class" name</sub><br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtCode  <sub><-- "Class" code to run</sub><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;]<br/>
 ]<br/>
 <br/>
