@@ -23,9 +23,9 @@ The available modes are:
 
 **App Mode**
 -
-This mode runs a dyanmic code from the **DBDYNCODE.TblApps** table.<br/>
-Use *export DYN_APPNAME=appname* to decide which code to fetch from the table.<br/><br/>
-If the app has not been found in the table, the system will show a warning and get out.<br/>
+This mode runs a dyanmic code from the **DBDYNCODE.TblApps** collection.<br/>
+Use *export DYN_APPNAME=appname* to decide which code to fetch from the collection.<br/><br/>
+If the app has not been found in the collection, the system will show a warning and get out.<br/>
 <br/>
 **Document structure of the TblApps:**<br/>
 [<br/>
@@ -56,9 +56,9 @@ If you want to finalize the app and get out as soon as the execution has finishe
 This mode runs a basic node js server that listens on port 7777.<br/>
 Use *export DYN_PORT=portnum* to override the default port.<br/><br/>
 The server expects to treat http-requests that look like this: *http://mydomain.name:7777/minisitename/pagename/?params=values*<br/>
-When a request is invoked, the server runs a site's dyanmic code from the **DBDYNCODE.TblHttpSites** table, according to the domain.<br/>
+When a request is invoked, the server runs a site's dyanmic code from the **DBDYNCODE.TblHttpSites** collection, according to the domain.<br/>
 After execution, it responds the text in *DYNHTTPSITES.htmlResponse* and ends the response (the server however continues running and serving).<br/><br/>
-If the domain has not been found in the table, the server will respond an error 404 and show a warning in the console.<br/>
+If the domain has not been found in the collection, the server will respond an error 404 and show a warning in the console.<br/>
 <br/>
 **Document structure of the TblHttpSites:**<br/>
 [<br/>
@@ -135,9 +135,9 @@ The server will hold the following variables on each request, you may use them:<
 This mode runs an express js server that listens on port 7778.<br/>
 Use *export DYN_PORT=portnum* to override the default port.<br/><br/>
 The server expects to treat http-requests that look like this: *http://mydomain.name:7778/minisitename/pagename/?params=values*<br/>
-When a request is invoked, the server runs a site's dyanmic code from the **DBDYNCODE.TblExpressSites** table, according to the domain.<br/>
+When a request is invoked, the server runs a site's dyanmic code from the **DBDYNCODE.TblExpressSites** collection, according to the domain.<br/>
 After execution, it responds the text in *res.locals.DYNEXPRESSSITES.htmlResponse* and ends the response (the server however continues running and serving).<br/><br/>
-If the domain has not been found in the table, the server will respond an error 404 and show a warning in the console.<br/>
+If the domain has not been found in the collection, the server will respond an error 404 and show a warning in the console.<br/>
 <br/>
 **Document structure of the TblExpressSites:**<br/>
 [<br/>
