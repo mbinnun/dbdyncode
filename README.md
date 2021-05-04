@@ -36,8 +36,11 @@ Use *export DYN_APPNAME=appname* to decide which code to fetch from the table.<b
 &nbsp;&nbsp;&nbsp;&nbsp;arrClasses [  <sub><-- Reusable codes ("classes")</sub><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtInsert<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtUpdate<br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strName  <sub><-- "Class" name</sub><br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtCode  <sub><-- "Class" code to run</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strName  <sub><-- "Class" name</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtCode  <sub><-- "Class" code to run</sub><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;]<br/>
 ]<br/>
 <br/>
+To run an app's "class" code from within the app's code, use:<br/>
+*await DYNAPPS.RunAppClass(classname);*<br/><br/>
+
