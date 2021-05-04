@@ -13,7 +13,7 @@ Run a dynamic NodeJS code, stored on a mongoDB database.
 
 ----
 **Running Modes**<br/><br/>
-Before running the *npm start* command, you should choose a running mode by using *export DYN_MODE*.<br/>
+Before running the *npm start* command, you may choose a running mode by using *export DYN_MODE*.<br/>
 <br/>
 The available modes are:
 1. *export DYN_MODE=hello* --> The default. Will show 'Hello world'.
