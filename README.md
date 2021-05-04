@@ -112,6 +112,7 @@ If the domain has not been found in the table, the server will respond an error 
 3. By default, the server will echo the string of *DYNHTTPSITES.htmlResponse* and will end the response.<br/>If from some reason you don't want the response to end (for example: websockets) then use:<br/>*DYNHTTPSITES.flgFinalize = 0;*<br/><br/>
 4. To run a site's "class" code from within the dynamic site's code, use:<br/>
 *await DYNHTTPSITES.RunSiteClass(classname);*<br/>
+<br/>
 
 **Variables:**<br/><br/>
 The server will hold the following variables on each request, you may use them:<br/><br/>
