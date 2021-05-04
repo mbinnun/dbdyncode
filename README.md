@@ -16,7 +16,7 @@ Run a dynamic NodeJS code, stored on a mongoDB database.
 Before running the *npm start* command, you may choose a running mode by using *export DYN_MODE*.<br/>
 <br/>
 The available modes are:
-1. *export DYN_MODE=hello* --> The default mode. Will just show 'Hello world'.<br/><br/>
-2. *export DYN_MODE=app* --> Run a dynamic app's code.<br/>You should also *export* the *DYN_APPNAME* as the name of the app that you want to run.<br/><br/>
-3. *export DYN_MODE=http* --> Run a nodejs basic server.<br/>You may *export* the *DYN_PORT* as the server's listening port. (default port is 7777).<br/><br/>
-4. *export DYN_MODE=express* --> Run an express server.<br/>You may *export* the *DYN_PORT* as the server's listening port. (default port is 7778).<br/><br/>
+1. ***export DYN_MODE=hello*** --> The default mode. Will just show 'Hello world'.<br/><br/>
+2. ***export DYN_MODE=app*** --> Run a dynamic app's code.<br/>You should also *export* the *DYN_APPNAME* as the name of the app that you want to run.<br/><br/>
+3. ***export DYN_MODE=http*** --> Run a nodejs basic server.<br/>You may *export* the *DYN_PORT* as the server's listening port. (default port is 7777).<br/><br/>
+4. ***export DYN_MODE=express*** --> Run an express server.<br/>You may *export* the *DYN_PORT* as the server's listening port. (default port is 7778).<br/><br/>
