@@ -24,9 +24,8 @@ The available modes are:
 **App Mode**
 -
 This mode runs a dyanmic code from the **DBDYNCODE.TblApps** table.<br/>
-Use *export DYN_APPNAME=appname* to decide which code to fetch from the table.<br/>
-If the app has not been found in the table, the system will show a warning and get out.
-<br/>
+Use *export DYN_APPNAME=appname* to decide which code to fetch from the table.<br/><br/>
+If the app has not been found in the table, the system will show a warning and get out.<br/><br/>
 **Document structure of the TblApps:**<br/>
 [<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;_id<br/>
