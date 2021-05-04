@@ -42,5 +42,10 @@ Use *export DYN_APPNAME=appname* to decide which code to fetch from the table.<b
 ]<br/>
 <br/>
 To run an app's "class" code from within the dynamic app's code, use:<br/>
-*await DYNAPPS.RunAppClass(classname);*<br/><br/>
+*await DYNAPPS.RunAppClass(classname);*<br/>
+<br/>
+**Note:**<br/>
+By default, the app will remain in memory and won't be finalized since we assume it to be asynchronous (processes can still run in the background after the code is executed).<br/>
+If you want to finalize the app and get out as soon as the execution has finished, use the following:<br/>
+*DYNCODE.flgFinalize = 1;*<br/>
 
