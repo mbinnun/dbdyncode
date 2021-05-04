@@ -5,7 +5,7 @@ Run a dynamic NodeJS code, stored on a mongoDB database.
 # Installation
 1. You should have NodeJS and mongoDB (with authentication enabled) being installed on your development/server environment.<br/>
 2. Do a *git clone https://github.com/mbinnun/dbdyncode/*<br/>
-3. Do a *mongorestore* to the DBDYNCODE database dumps from the *mongo-files* folder.<br/>(After the restore, you should have the DBDYNCODE database on your mongodb.)<br/>
+3. Do a *mongorestore* to the DBDYNCODE database dumps from the *mongo-files* folder.<br/>(After the restore, you should have the DBDYNCODE database with all its collections on your mongodb.)<br/>
 4. Run the following command on the mongo-cli:<br/>*db.createUser({user: "myuser", pwd: "mypassword", roles:[{role: "userAdmin" , db:"DBDYNCODE"}, {role: "readWrite" , db:"DBDYNCODE"}]});*<br/>Change **myuser** and **mypassword**, set them to your own username and password.<br/>
 5. On the project's root folder, run the command *npm install* to automatically install the dependencies.<br/>
 6. Now, run the project for the first time:<br/>(Again - use your own username and password)<br/>*export DYN_MONGO_USER=**myuser**<br/>export DYN_MONGO_PASSWD=**mypassword**<br/>export DYN_MONGO_SRV=**localhost**<br/>npm start*<br/>
