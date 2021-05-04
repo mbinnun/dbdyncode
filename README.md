@@ -20,3 +20,7 @@ The available modes are:
 2. ***export DYN_MODE=app*** --> Run a dynamic app's code.<br/>You should also *export* the *DYN_APPNAME* as the name of the app that you want to run.<br/><br/>
 3. ***export DYN_MODE=http*** --> Run a nodejs basic server.<br/>You may *export* the *DYN_PORT* as the server's listening port. (default port is 7777).<br/><br/>
 4. ***export DYN_MODE=express*** --> Run an express server.<br/>You may *export* the *DYN_PORT* as the server's listening port. (default port is 7778).<br/><br/>
+
+**App Mode**
+-
+This mode runs a dyanmic code from the **DBDYNCODE.TblApps** table.<br/>
