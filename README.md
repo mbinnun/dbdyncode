@@ -24,3 +24,4 @@ The available modes are:
 **App Mode**
 -
 This mode runs a dyanmic code from the **DBDYNCODE.TblApps** table.<br/>
+Use *export DYN_APPNAME=appname* to decide which code to fetch from the table.<br/>
