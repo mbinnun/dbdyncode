@@ -60,7 +60,7 @@ When a request is invoked, the server runs a site's dyanmic code from the **DBDY
 After execution, it responds the text in *DYNHTTPSITES.htmlResponse* and ends the response (the server however continues running and serving).<br/><br/>
 If the domain has not been found in the table, the server will respond an error 404.<br/>
 <br/>
-**Document structure of the TblApps:**<br/>
+**Document structure of the TblHttpSites:**<br/>
 [<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;_id<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;dtInsert<br/>
