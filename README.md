@@ -58,7 +58,7 @@ Use *export DYN_PORT=portnum* to override the default port.<br/><br/>
 The server expects to treat http-requests that look like this: *http://mydomain.name:7777/minisitename/pagename/?params=values*<br/>
 When a request is invoked, the server runs a site's dyanmic code from the **DBDYNCODE.TblHttpSites** table, according to the domain.<br/>
 After execution, it responds the text in *DYNHTTPSITES.htmlResponse* and ends the response (the server however continues running and serving).<br/><br/>
-If the domain has not been found in the table, the server will respond an error 404.<br/>
+If the domain has not been found in the table, the server will respond an error 404 and show a warning in the console.<br/>
 <br/>
 **Document structure of the TblHttpSites:**<br/>
 [<br/>
@@ -109,8 +109,8 @@ If the domain has not been found in the table, the server will respond an error 
 **Notes:**<br/>
 1. If the minisite/page parts are missing from the url, the server will redirect 301 the request to the default minisite/page uri.<br/><br/>
 2. Alonside dynamic code, the server also handles static files.<br/>For serving a static file, it expects a url like: http://mydomain.com/myfile.pdf<br/><br/>
-3. By default, the server will echo the string of *DYNHTTPSITES.htmlResponse* and will end the response.<br/>If from some reason you don't want the response to end (for example: websockets) then use:<br/>*DYNHTTPSITES.flgFinalize == 0;*<br/><br/>
-4. To run an site's "class" code from within the dynamic site's code, use:<br/>
+3. By default, the server will echo the string of *DYNHTTPSITES.htmlResponse* and will end the response.<br/>If from some reason you don't want the response to end (for example: websockets) then use:<br/>*DYNHTTPSITES.flgFinalize = 0;*<br/><br/>
+4. To run a site's "class" code from within the dynamic site's code, use:<br/>
 *await DYNHTTPSITES.RunSiteClass(classname);*<br/>
 
 **Variables:**<br/><br/>
@@ -128,3 +128,84 @@ The server will hold the following variables on each request, you may use them:<
 *DYNHTTPSITES.arrReqPostFiles*<br/>
 *DYNHTTPSITES.arrReqCookies*<br/>
 *DYNHTTPSITES.strReqUserAgent*<br/>
+
+**Express Mode**
+-
+This mode runs an express js server that listens on port 7778.<br/>
+Use *export DYN_PORT=portnum* to override the default port.<br/><br/>
+The server expects to treat http-requests that look like this: *http://mydomain.name:7778/minisitename/pagename/?params=values*<br/>
+When a request is invoked, the server runs a site's dyanmic code from the **DBDYNCODE.TblExpressSites** table, according to the domain.<br/>
+After execution, it responds the text in *res.locals.DYNEXPRESSSITES.htmlResponse* and ends the response (the server however continues running and serving).<br/><br/>
+If the domain has not been found in the table, the server will respond an error 404 and show a warning in the console.<br/>
+<br/>
+**Document structure of the TblExpressSites:**<br/>
+[<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;_id<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;dtInsert<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;dtUpdate<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;strDomain  <sub><-- The site's domain</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;txtCode  <sub><-- The dynamic site's code to run</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;arrClasses [  <sub><-- Reusable codes ("classes")</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtInsert<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtUpdate<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strName  <sub><-- "Class" name</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtCode  <sub><-- "Class" code to run</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;strDefaultMinisiteUri
+&nbsp;&nbsp;&nbsp;&nbsp;arrMinisites [  <sub><-- "Minisites" of this site </sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtInsert<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtUpdate<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strUri  <sub><-- "Minisite" name</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flgAuth  <sub><-- Flag for http-auth protecting this "minisite"</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strAuthUser  <sub><-- http-auth user</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strAuthPass  <sub><-- http-auth password</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtCode  <sub><-- "Minisite" code to run</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strDefaultPageUri<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arrPages [  <sub><-- "Pages" of this minisite </sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtInsert<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtUpdate<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strUri  <sub><-- "Page" name</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtCode  <sub><-- "Page" code to run</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;arrTextFiles [  <sub><-- Site's static text files to be served</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtInsert<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtUpdate<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strFileExt  <sub><-- Static file extension</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strFileName  <sub><-- Static file name</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtData  <sub><-- Static file contents</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;arrB64Files [  <sub><-- Site's static text files to be served</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtInsert<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtUpdate<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strFileExt  <sub><-- Static file extension</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strFileName  <sub><-- Static file name</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b64Data  <sub><-- Static file contents (base64 encoded)</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;]<br/>
+]<br/>
+
+**Notes:**<br/>
+1. If the minisite/page parts are missing from the url, the server will redirect 301 the request to the default minisite/page uri.<br/><br/>
+2. Alonside dynamic code, the server also handles static files.<br/>For serving a static file, it expects a url like: http://mydomain.com/myfile.pdf<br/><br/>
+3. By default, the server will echo the string of *res.locals.DYNEXPRESSSITES.htmlResponse* and will end the response.<br/>If from some reason you don't want the response to end (for example: websockets) then use:<br/>*res.locals.DYNEXPRESSSITES.flgFinalize = 0;*<br/><br/>
+4. To run a site's "class" code from within the dynamic site's code, use:<br/>
+*await res.locals.DYNEXPRESSSITES.RunSiteClass(classname);*<br/>
+5. You may use the following functions to return error 404 / redirect 301:<br/>
+*res.locals.DYNEXPRESSSITES.Error404();*<br/>
+*res.locals.DYNEXPRESSSITES.Redirect301(strRedirectUrl);*<br/>
+
+**Variables:**<br/><br/>
+The server will hold the following variables on each request, you may use them:<br/><br/>
+*res.locals.DYNEXPRESSSITES..htmlResponse*<br/>
+*res.locals.DYNEXPRESSSITES..binResponse*<br/>
+*res.locals.DYNEXPRESSSITES..strReqProtocol*<br/>
+*res.locals.DYNEXPRESSSITES..strReqDomain*<br/>
+*res.locals.DYNEXPRESSSITES..iReqPort*<br/>
+*res.locals.DYNEXPRESSSITES..strReqUri*<br/>
+*res.locals.DYNEXPRESSSITES..strReqMinisiteUri*<br/>
+*res.locals.DYNEXPRESSSITES..strReqPageUri*<br/>
+*res.locals.DYNEXPRESSSITES..arrReqQueryString*<br/>
+*res.locals.DYNEXPRESSSITES..arrReqPostData*<br/>
+*res.locals.DYNEXPRESSSITES..arrReqPostFiles*<br/>
+*res.locals.DYNEXPRESSSITES..arrReqCookies*<br/>
+*res.locals.DYNEXPRESSSITES..strReqUserAgent*<br/>
