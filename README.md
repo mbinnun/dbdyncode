@@ -41,6 +41,6 @@ Use *export DYN_APPNAME=appname* to decide which code to fetch from the table.<b
 &nbsp;&nbsp;&nbsp;&nbsp;]<br/>
 ]<br/>
 <br/>
-To run an app's "class" code from within the app's code, use:<br/>
+To run an app's "class" code from within the dynamic app's code, use:<br/>
 *await DYNAPPS.RunAppClass(classname);*<br/><br/>
 
