@@ -50,3 +50,13 @@ By default, the app will remain in memory and won't be finalized since we assume
 If you want to finalize the app and get out as soon as the execution has finished, use the following:<br/>
 *DYNCODE.flgFinalize = 1;*<br/>
 <br/>
+
+**Http Mode**
+-
+This mode runs a basic node js server that listens on port 7777.<br/>
+Use *export DYN_PORT=portnum* to override the default port.<br/>
+The server expects to treat http-requests that look like this: *http://mydomain.name:7777/minisitename/pagename/?params=values*<br/>
+When a request is invoked, the server runs a site's dyanmic code from the **DBDYNCODE.TblHttpSites** table.<br/>
+After executing this code, it responds the text in *DYNHTTPSITES.htmlResponse* and ends the response (the server however continues running and serving).<br/>
+If the domain has not been found in the table, the server will respond error 404.
+<br/>
