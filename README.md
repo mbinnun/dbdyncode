@@ -2,7 +2,7 @@
 Run a dynamic NodeJS code, stored on a mongoDB database.
 
 ----
-**Installation**
+**Installation**<br/><br/>
 1. You should have NodeJS and mongoDB being installed on your development/server environment.<br/>
 2. Do a *git clone https://github.com/mbinnun/dbdyncode/*<br/>
 3. Do a *mongorestore* to the DBDYNCODE database dumps from the *mongo-files* folder.<br/>(You should now have the DBDYNCODE database restored on your mongodb.)<br/>
@@ -12,7 +12,7 @@ Run a dynamic NodeJS code, stored on a mongoDB database.
 7. You should now see the 'Hello World' message.<br/>That means the installation has succeeded.
 
 ----
-**Modes**
+**Running Modes**<br/><br/>
 Before running the *npm start* command, you should choose a running mode, by using *export DYN_MODE*.<br/>
 <br/>
 The available modes are:
