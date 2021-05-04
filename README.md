@@ -210,3 +210,11 @@ The server will hold the following variables on each request, you may use them:<
 *res.locals.DYNEXPRESSSITES..arrReqPostFiles*<br/>
 *res.locals.DYNEXPRESSSITES..arrReqCookies*<br/>
 *res.locals.DYNEXPRESSSITES..strReqUserAgent*<br/>
+<br/>
+
+----
+# General Notes
+1. To use a node js component one of the apps/sites, it has to be installed to the whole project using *npm install --save componentname*<br/>
+2. On file uploades (multipart/form-data), the uploaded files are deleted from the disk as soon as the request is served.<br/>To save them you may use *DYNEXPRESS.objFs* (or *DYNHTTP.objFs* on Http mode) to get access to the filesystem and move the file to a persistent folder.<br/>
+3. The http-auth password will become MD5 on the next versions of dbdyncode.<br/>
+
