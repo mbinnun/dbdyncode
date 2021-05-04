@@ -60,3 +60,50 @@ When a request is invoked, the server runs a site's dyanmic code from the **DBDY
 After execution, it responds the text in *DYNHTTPSITES.htmlResponse* and ends the response (the server however continues running and serving).<br/><br/>
 If the domain has not been found in the table, the server will respond an error 404.<br/>
 <br/>
+**Document structure of the TblApps:**<br/>
+[<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;_id<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;dtInsert<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;dtUpdate<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;strDomain  <sub><-- The site's domain</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;txtCode  <sub><-- The dynamic site's code to run</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;arrClasses [  <sub><-- Reusable codes ("classes")</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtInsert<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtUpdate<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strName  <sub><-- "Class" name</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtCode  <sub><-- "Class" code to run</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;strDefaultMinisiteUri
+&nbsp;&nbsp;&nbsp;&nbsp;arrMinisites [  <sub><-- "Minisites" of this site </sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtInsert<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtUpdate<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strUri  <sub><-- "Minisite" name</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flgAuth  <sub><-- Flag for http-auth protecting this "minisite"</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strAuthUser  <sub><-- http-auth user</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strAuthPass  <sub><-- http-auth password</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtCode  <sub><-- "Minisite" code to run</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strDefaultPageUri
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arrPages [  <sub><-- "Pages" of this minisite </sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtInsert
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtUpdate
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strUri  <sub><-- "Page" name</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtCode  <sub><-- "Page" code to run</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
+&nbsp;&nbsp;&nbsp;&nbsp;]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;arrTextFiles [  <sub><-- Site's static text files to be served</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtInsert<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtUpdate<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strFileExt  <sub><-- Static file extension</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strFileName  <sub><-- Static file name</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtData  <sub><-- Static file contents</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;]<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;arrB64Files [  <sub><-- Site's static text files to be served</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtInsert<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtUpdate<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strFileExt  <sub><-- Static file extension</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strFileName  <sub><-- Static file name</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b64Data  <sub><-- Static file contents (base64 encoded)</sub><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;]<br/>
+]<br/>
+<br/>
+
