@@ -31,13 +31,13 @@ Use *export DYN_APPNAME=appname* to decide which code to fetch from the table.<b
 &nbsp;&nbsp;&nbsp;&nbsp;_id<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;dtInsert<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;dtUpdate<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;strName<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;txtCode<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;arrClasses [<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;strName <-- The app name<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;txtCode <-- The code to run<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;arrClasses <-- Reusable codes ("classes") [<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtInsert<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtUpdate<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strName<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtCode<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strName <-- "Class" name<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtCode <-- "Class" code to run<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;]<br/>
 ]<br/>
 <br/>
