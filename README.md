@@ -26,7 +26,7 @@ The available modes are:
 This mode runs a dyanmic code from the **DBDYNCODE.TblApps** table.<br/>
 Use *export DYN_APPNAME=appname* to decide which code to fetch from the table.<br/>
 <br/>
-**The document structure of TblApps:**<br/>
+**Document structure of the TblApps:**<br/>
 [<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;_id<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;dtInsert<br/>
