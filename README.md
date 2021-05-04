@@ -24,29 +24,3 @@ The available modes are:
 **App Mode**
 -
 This mode runs a dyanmic code from the **DBDYNCODE.TblApps** table.<br/>
-Use *export DYN_APPNAME=appname* to decide which code to fetch from the table.<br/>
-If the app has not been found in the table, the system will show a warning and get out.
-<br/>
-**Document structure of the TblApps:**<br/>
-[<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;_id<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;dtInsert<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;dtUpdate<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;strName  <sub><-- The app name</sub><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;txtCode  <sub><-- The dynamic app's code to run</sub><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;arrClasses [  <sub><-- Reusable codes ("classes")</sub><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtInsert<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dtUpdate<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strName  <sub><-- "Class" name</sub><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtCode  <sub><-- "Class" code to run</sub><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;]<br/>
-]<br/>
-<br/>
-To run an app's "class" code from within the dynamic app's code, use:<br/>
-*await DYNAPPS.RunAppClass(classname);*<br/>
-<br/>
-**Note:**<br/>
-By default, the app will remain in memory and won't be finalized since we assume it to be asynchronous (processes can still run in the background after the code is executed).<br/>
-If you want to finalize the app and get out as soon as the execution has finished, use the following:<br/>
-*DYNCODE.flgFinalize = 1;*<br/>
-<br/>
