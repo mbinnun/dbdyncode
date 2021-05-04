@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_"},{"v":2,"unique":true,"key":{"strName":1.0},"name":"strName_1"},{"v":2,"unique":true,"key":{"arrClasses.strName":1},"name":"arrClasses.strName_1","background":true}],"uuid":"4c71d8d696f24326bb0b51784d43f20d"}
