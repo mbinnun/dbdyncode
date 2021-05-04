@@ -9,7 +9,7 @@ Run a dynamic NodeJS code, stored on a mongoDB database.
 4. Run the following command on the mongo-cli:<br/>*db.createUser({user: "myuser", pwd: "mypassword", roles:[{role: "userAdmin" , db:"DBDYNCODE"}, {role: "readWrite" , db:"DBDYNCODE"}]});*<br/>Change **myuser** and **mypassword**, set them to your own username and password.<br/>
 5. On the project's root folder, run the command *npm install* to automatically install the dependencies.<br/>
 6. Now, run the project for the first time:<br/>(Again - use your own username and password)<br/>*export DYN_MONGO_USER=**myuser**<br/>export DYN_MONGO_PASSWD=**mypassword**<br/>export DYN_MONGO_SRV=**localhost**<br/>npm start*<br/>
-7. You should now see the 'Hello World' message.<br/>That means the installation was successful.
+7. You should now see the 'Hello World' message.<br/>That means the installation was successful.<br/>
 
 ----
 # Running Modes
@@ -25,7 +25,8 @@ The available modes are:
 -
 This mode runs a dyanmic code from the **DBDYNCODE.TblApps** table.<br/>
 Use *export DYN_APPNAME=appname* to decide which code to fetch from the table.<br/><br/>
-If the app has not been found in the table, the system will show a warning and get out.<br/><br/>
+If the app has not been found in the table, the system will show a warning and get out.<br/>
+<br/>
 **Document structure of the TblApps:**<br/>
 [<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;_id<br/>
@@ -53,9 +54,9 @@ If you want to finalize the app and get out as soon as the execution has finishe
 **Http Mode**
 -
 This mode runs a basic node js server that listens on port 7777.<br/>
-Use *export DYN_PORT=portnum* to override the default port.<br/>
+Use *export DYN_PORT=portnum* to override the default port.<br/><br/>
 The server expects to treat http-requests that look like this: *http://mydomain.name:7777/minisitename/pagename/?params=values*<br/>
 When a request is invoked, the server runs a site's dyanmic code from the **DBDYNCODE.TblHttpSites** table.<br/>
-After executing this code, it responds the text in *DYNHTTPSITES.htmlResponse* and ends the response (the server however continues running and serving).<br/>
-If the domain has not been found in the table, the server will respond error 404.
+After executing this code, it responds the text in *DYNHTTPSITES.htmlResponse* and ends the response (the server however continues running and serving).<br/><br/>
+If the domain has not been found in the table, the server will respond error 404.<br/>
 <br/>
