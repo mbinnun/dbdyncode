@@ -28,16 +28,16 @@ Use *export DYN_APPNAME=appname* to decide which code to fetch from the table.<b
 <br/>
 **The document structure of TblApps:**<br/>
 [<br/>
-  _id<br/>
-  dtInsert<br/>
-  dtUpdate<br/>
-  strName<br/>
-  txtCode<br/>
-  arrClasses [<br/>
-    dtInsert<br/>
-    dtUpdate<br/>
-    strName<br/>
-    txtCode<br/>
-  ]<br/>
+&nbsp;&nbsp;_id<br/>
+&nbsp;&nbsp;dtInsert<br/>
+&nbsp;&nbsp;dtUpdate<br/>
+&nbsp;&nbsp;strName<br/>
+&nbsp;&nbsp;txtCode<br/>
+&nbsp;&nbsp;arrClasses [<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;dtInsert<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;dtUpdate<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;strName<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;txtCode<br/>
+&nbsp;&nbsp;]<br/>
 ]<br/>
 <br/>
