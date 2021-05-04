@@ -10,3 +10,13 @@ Run a dynamic NodeJS code, stored on a mongoDB database.
 5. On the project's root folder, run the command *npm install* to automatically install the dependencies.<br/>
 6. Now run the project for the first time:<br/>(Again, use your own username and password)<br/>*export DYN_MONGO_USER=**myuser**<br/>export DYN_MONGO_PASSWD=**mypassword**<br/>export DYN_MONGO_SRV=**localhost**<br/>npm start*<br/>
 7. You should now see the 'Hello World' message.<br/>That means the installation has succeeded.
+
+----
+**Modes**
+Before running the *npm start* command, you should choose a running mode, by using *export DYN_MODE*.<br/>
+<br/>
+The available modes are:
+1. *export DYN_MODE=hello* --> The default. Will show 'Hello world'.
+2. *export DYN_MODE=app* --> Run app's code from the **DBDYNCODE.TblApps** table.<br/>You should also *export* the *DYN_APPNAME* as the name of the app that you want to run.
+3. *export DYN_MODE=http* --> Run a nodejs basic server.<br/>You may *export* the *DYN_PORT* as the server's listening port. (default port is 7777).
+4. *export DYN_MODE=express* --> Run an express server.<br/>You may *export* the *DYN_PORT* as the server's listening port. (default port is 7778).
