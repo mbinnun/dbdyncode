@@ -21,6 +21,7 @@ The available modes are:
 3. ***export DYN_MODE=http*** --> Run a basic nodejs server.<br/>You may *export* the *DYN_PORT* as the server's listening port. (default port is 7777).<br/><br/>
 4. ***export DYN_MODE=express*** --> Run an express server.<br/>You may *export* the *DYN_PORT* as the server's listening port. (default port is 7778).<br/>
 
+-
 **App Mode**
 -
 This mode runs a dyanmic code from the **DBDYNCODE.TblApps** table.<br/>
