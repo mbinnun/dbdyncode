@@ -111,7 +111,7 @@ If the domain has not been found in the table, the server will respond an error 
 2. Alonside dynamic code, the server also handles static files.<br/>For serving a static file, it expects a url like: http://mydomain.com/myfile.pdf<br/><br/>
 3. By default, the server will echo the string of *DYNHTTPSITES.htmlResponse* and will end the response.<br/>If from some reason you don't want the response to end (for example: websockets) then use:<br/>*DYNHTTPSITES.flgFinalize == 0;*<br/>
 
-**Variables:**<br/>
+**Variables:**<br/><br/>
 The server will hold the following variables on each request, you may use them:<br/><br/>
 *DYNHTTPSITES.htmlResponse*<br/>
 *DYNHTTPSITES.binResponse*<br/>
