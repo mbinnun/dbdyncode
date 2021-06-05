@@ -219,3 +219,8 @@ The server will hold the following variables on each request, you may use them:<
 3. The http-auth password will become MD5 on the next versions of dbdyncode.<br/>
 4. You can use the **TblClasses** to develop your own "modes"/global codes.<br/>Afterwards, run your class/mode using *await DYNCLASSES.RunClass(strModeClassName);*
 
+<hr/>
+<br/>
+Visit my Linkedin profile at:<br/>
+https://www.linkedin.com/in/moshe-binnun-computer-engineer-fullstack-web-developer-team-leader/<br/>
+https://moshe.binnun.me/<br/>
